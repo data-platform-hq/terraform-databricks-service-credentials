@@ -5,7 +5,7 @@ resource "databricks_credential" "this" {
 
   # Dynamic block for Azure
   dynamic "azure_managed_identity" {
-    for_each = var.cloud == "azure" ? [1] : []
+    for_each = var.cloud_name == "azure" ? [1] : []
     content {
       access_connector_id = var.service_credential.azure_access_connector_id
     }
@@ -13,19 +13,17 @@ resource "databricks_credential" "this" {
 
   # Dynamic block for AWS
   dynamic "aws_iam_role" {
-    for_each = var.cloud == "aws" ? [1] : []
+    for_each = var.cloud_name == "aws" ? [1] : []
     content {
       role_arn = var.service_credential.aws_iam_role_arn
     }
   }
 
-  # TDOO 
   # Dynamic block for GCP
-  # GCP is not yet supported
-  # dynamic "databricks_gcp_service_account" {
-  #  for_each = var.cloud == "gcp" ? [1] : []
-  #  content {}
-  #}
+  dynamic "databricks_gcp_service_account" {
+    for_each = var.cloud_name == "gcp" ? [1] : []
+    content {}
+  }
 
   force_destroy  = var.service_credential.force_destroy
   comment        = var.service_credential.comment
