@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/data-platform-hq/terraform-databricks-service-credentials/compare/v1.1.0...v1.2.0) (2026-11-24)
+
+
+### Features
+
+* add gcp configuration ([cdf575b](https://github.com/data-platform-hq/terraform-databricks-service-credentials/commit/cdf575bbbdf9e0fb7a2bd5ae4d2400b3ec22062c))
+
 # [1.1.0](https://github.com/data-platform-hq/terraform-databricks-service-credentials/compare/v1.0.0...v1.1.0) (2026-02-02)
 
 
