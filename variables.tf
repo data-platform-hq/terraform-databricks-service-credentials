@@ -11,9 +11,9 @@ variable "service_credential" {
   description = "Object with service credentials configuration attributes"
 }
 
-variable "cloud" {
+variable "cloud_name" {
   type        = string
-  description = "Cloud (azure or aws)"
+  description = "Cloud name (azure, aws or gcp)"
 }
 
 variable "service_credential_permissions" {
